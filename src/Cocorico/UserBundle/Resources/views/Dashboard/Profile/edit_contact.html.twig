@@ -155,13 +155,28 @@
                                 </div>
 
                                 <div class="field-row">
-                                    {{ form_errors(address.zip) }}
+                                    {{ form_errors(address.state) }}
                                     <span class="label">
-                                        {{ form_label(address.zip) }}
+                                        {{ form_label(address.state) }}
                                     </span>
 
                                     <div class="field-holder">
-                                        {{ form_widget(address.zip, {
+                                        {{ form_widget(address.state, {
+                                            'attr': {
+                                                'class': "form-control"
+                                            }
+                                        }) }}
+                                    </div>
+                                </div>
+
+                                <div class="field-row">
+                                    {{ form_errors(address.postcode) }}
+                                    <span class="label">
+                                        {{ form_label(address.postcode) }}
+                                    </span>
+
+                                    <div class="field-holder">
+                                        {{ form_widget(address.postcode, {
                                             'attr': {
                                                 'class': "form-control"
                                             }

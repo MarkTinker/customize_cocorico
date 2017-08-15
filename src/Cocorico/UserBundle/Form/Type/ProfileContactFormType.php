@@ -33,8 +33,7 @@ class ProfileContactFormType extends AbstractType
                 'text',
                 array(
                     'label' => 'form.user.phone_prefix',
-                    'required' => false,
-                    'data' => '+33'
+                    'required' => false
                 )
             )
             ->add(

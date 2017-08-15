@@ -46,10 +46,27 @@ class UserAddressFormType extends AbstractType
                 )
             )
             ->add(
-                'zip',
+                'state',
+                'choice',
+                array(                    
+                    'label' => 'form.address.state',
+                    'choices' => array(
+                        'form.address.state.NSW' => 'form.address.state.NSW',
+                        'form.address.state.QLD' => 'form.address.state.QLD',
+                        'form.address.state.SA' => 'form.address.state.SA',
+                        'form.address.state.TAS' => 'form.address.state.TAS',
+                        'form.address.state.VIC' => 'form.address.state.VIC',
+                        'form.address.state.WA' => 'form.address.state.WA'
+                    ),
+                'required' => false,
+                'choices_as_values' => true
+                )
+            )
+            ->add(
+                'postcode',
                 null,
                 array(
-                    'label' => 'form.address.zip',
+                    'label' => 'form.address.postcode',
                     'required' => false
                 )
             )

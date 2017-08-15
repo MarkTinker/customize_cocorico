@@ -64,9 +64,16 @@ class UserAddress
     /**
      * @var string
      *
-     * @ORM\Column(name="zip", type="string", length=50, nullable=true)
+     * @ORM\Column(name="state", type="string", length=255, nullable=true)
      */
-    protected $zip;
+    protected $state;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="postcode", type="string", length=50, nullable=true)
+     */
+    protected $postcode;
 
     /**
      * @var string
@@ -155,26 +162,49 @@ class UserAddress
     }
 
     /**
-     * Set zip
+     * Set state
      *
-     * @param string $zip
+     * @param string $state
      * @return UserAddress
      */
-    public function setZip($zip)
+    public function setState($state)
     {
-        $this->zip = $zip;
+        $this->state = $state;
 
         return $this;
     }
 
     /**
-     * Get zip
+     * Get state
      *
      * @return string
      */
-    public function getZip()
+    public function getState()
     {
-        return $this->zip;
+        return $this->state;
+    }
+
+    /**
+     * Set postcode
+     *
+     * @param string $postcode
+     * @return UserAddress
+     */
+    public function setPostcode($postcode)
+    {
+        $this->postcode = $postcode;
+
+        return $this;
+    }
+
+    /**
+     * Get postcode
+     *
+     * @return string
+     */
+    public function getPostcode()
+    {
+        return $this->postcode;
     }
 
     /**
