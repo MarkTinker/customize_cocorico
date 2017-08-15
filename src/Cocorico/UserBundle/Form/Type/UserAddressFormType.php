@@ -22,10 +22,18 @@ class UserAddressFormType extends AbstractType
     {
         $builder
             ->add(
-                'address',
-                'textarea',
+                'address1',
+                'text',
                 array(
-                    'label' => 'form.address.address',
+                    'label' => 'form.address.address1',
+                    'required' => false
+                )
+            )
+            ->add(
+                'address2',
+                'text',
+                array(
+                    'label' => 'form.address.address2',
                     'required' => false
                 )
             )

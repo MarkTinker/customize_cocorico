@@ -43,9 +43,16 @@ class UserAddress
     /**
      * @var string
      *
-     * @ORM\Column(name="address", type="string", length=255, nullable=true)
+     * @ORM\Column(name="address1", type="string", length=255, nullable=true)
      */
-    protected $address;
+    protected $address1;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="address2", type="string", length=255, nullable=true)
+     */
+    protected $address2;
 
     /**
      * @var string
@@ -66,7 +73,7 @@ class UserAddress
      *
      * @ORM\Column(name="country", type="string", length=3, nullable=true)
      */
-    protected $country = "FR";
+    protected $country = "AU";
 
     /**
      * Get id
@@ -79,28 +86,50 @@ class UserAddress
     }
 
     /**
-     * Set address
+     * Set address1
      *
-     * @param string $address
-     * @return UserAddress
+     * @param string $address1
+     * @return UserAddress1
      */
-    public function setAddress($address)
+    public function setAddress1($address1)
     {
-        $this->address = $address;
+        $this->address1 = $address1;
 
         return $this;
     }
 
     /**
-     * Get address
+     * Get address1
      *
      * @return string
      */
-    public function getAddress()
+    public function getAddress1()
     {
-        return $this->address;
+        return $this->address1;
     }
 
+    /**
+     * Set address2
+     *
+     * @param string $address2
+     * @return UserAddress2
+     */
+    public function setAddress2($address2)
+    {
+        $this->address1 = $address2;
+
+        return $this;
+    }
+
+    /**
+     * Get address2
+     *
+     * @return string
+     */
+    public function getAddress2()
+    {
+        return $this->address2;
+    }
 
     /**
      * Set city

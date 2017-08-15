@@ -67,7 +67,7 @@
                                                 'class': "form-control no-arrow",
                                             }
                                         } ) }}
-                                    </div>
+                                    </div>                                    
                                     <div class="field-year">
                                         {{ form_widget(form.birthday.year, {
                                             'attr': {
@@ -77,61 +77,12 @@
                                     </div>
                                 </div>
                             </div>
-
-                            <div class="field-row">
-                                {{ form_errors(form.nationality) }}
-                                <span class="label">{{ form_label(form.nationality) }}</span>
-
-                                <div class="field-holder">
-                                    {{ form_widget(form.nationality,{
-                                        'attr': {
-                                            'class': "no-arrow"
-                                        }
-                                    } ) }}
-                                </div>
-                            </div>
-
-                            <div class="field-row">
-                                {{ form_errors(form.countryOfResidence) }}
-                                <span class="label">{{ form_label(form.countryOfResidence) }}</span>
-
-                                <div class="field-holder">
-                                    {{ form_widget(form.countryOfResidence,{
-                                        'attr': {
-                                            'class': "no-arrow"
-                                        }
-                                    } ) }}
-                                </div>
-                            </div>
-
-                            <div class="field-row">
-                                {{ form_errors(form.profession) }}
-                                <span class="label">{{ form_label(form.profession) }}</span>
-
-                                <div class="field-holder">
-                                    {{ form_widget(form.profession,{
-                                        'attr': {
-                                            'class': "form-control"
-                                        }
-                                    } ) }}
-                                </div>
-                            </div>
                         </div>
 
                         <div class="column">
-                            <div class="field-row price-field">
-                                {{ form_errors(form.annualIncome) }}
-                                <span class="label">{{ form_label(form.annualIncome) }}</span>
-
-                                {{ form_widget(form.annualIncome,{
-                                    'attr': {
-                                        'class': "numbers-only form-control"
-                                    }
-                                } ) }}
-                            </div>
                             <div class="field-row">
-                                {{ form_errors(form.bankOwnerName) }}
-                                <span class="label">{{ form_label(form.bankOwnerName) }}</span>
+                                {{ form_errors(form.bankAccountName) }}
+                                <span class="label">{{ form_label(form.bankAccountName) }}</span>
                                 <span class="tooltip-btn">
                                     <button
                                             title="{{ 'form.user.bank_owner_name.help'|trans }}"
@@ -141,7 +92,7 @@
                                 </span>
 
                                 <div class="field-holder">
-                                    {{ form_widget(form.bankOwnerName,{
+                                    {{ form_widget(form.bankAccountName,{
                                         'attr': {
                                             'class': "form-control"
                                         }
@@ -150,27 +101,8 @@
                             </div>
 
                             <div class="field-row">
-                                {{ form_errors(form.bankOwnerAddress) }}
-                                <span class="label">{{ form_label(form.bankOwnerAddress) }}</span>
-                                <span class="tooltip-btn">
-                                    <button title="{{ 'form.user.bank_owner_address.help'|trans }}"
-                                            data-placement="right" data-toggle="tooltip" class="tooltip-button"
-                                            type="button">?
-                                    </button>
-                                </span>
-
-                                <div class="field-holder">
-                                    {{ form_widget(form.bankOwnerAddress,{
-                                        'attr': {
-                                            'class': "form-control"
-                                        }
-                                    } ) }}
-                                </div>
-                            </div>
-
-                            <div class="field-row">
-                                {{ form_errors(form.iban) }}
-                                <span class="label">{{ form_label(form.iban) }}</span>
+                                {{ form_errors(form.bsb) }}
+                                <span class="label">{{ form_label(form.bsb) }}</span>
                                 <span class="tooltip-btn">
                                     <button title="{{ 'form.user.iban.help'|trans }}"
                                             data-placement="right" data-toggle="tooltip"
@@ -179,7 +111,7 @@
                                 </span>
 
                                 <div class="field-holder">
-                                    {{ form_widget(form.iban,{
+                                    {{ form_widget(form.bsb,{
                                         'attr': {
                                             'class': "form-control"
                                         }
@@ -188,8 +120,8 @@
                             </div>
 
                             <div class="field-row">
-                                {{ form_errors(form.bic) }}
-                                <span class="label">{{ form_label(form.bic) }}</span>
+                                {{ form_errors(form.account) }}
+                                <span class="label">{{ form_label(form.account) }}</span>
                                 <span class="tooltip-btn">
                                     <button title="{{ 'form.user.bic.help'|trans }}"
                                             data-placement="right" data-toggle="tooltip"
@@ -198,14 +130,13 @@
                                 </span>
 
                                 <div class="field-holder">
-                                    {{ form_widget(form.bic,{
+                                    {{ form_widget(form.account,{
                                         'attr': {
                                             'class': "form-control"
                                         }
                                     } ) }}
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>

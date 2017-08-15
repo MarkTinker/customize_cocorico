@@ -125,7 +125,7 @@ class User extends BaseUser implements ParticipantInterface
      *
      * @ORM\Column(name="phone_prefix", type="string", length=6, nullable=true)
      */
-    protected $phonePrefix = '+33';
+    protected $phonePrefix = '+61';
 
     /**
      * @var string
@@ -158,17 +158,6 @@ class User extends BaseUser implements ParticipantInterface
     /**
      * @var string
      *
-     * @ORM\Column(name="country_of_residence", type="string", length=3, nullable=true)
-     *
-     * @Assert\NotBlank(message="cocorico_user.country_of_residence.blank", groups={
-     *  "CocoricoRegistration", "CocoricoProfilePayment"
-     * })
-     */
-    protected $countryOfResidence = "FR";
-
-    /**
-     * @var string
-     *
      * @ORM\Column(name="profession", type="string", length=50, nullable=true)
      */
     protected $profession;
@@ -176,58 +165,36 @@ class User extends BaseUser implements ParticipantInterface
     /**
      * @var string
      *
-     * @ORM\Column(name="iban", type="string", length=45, nullable=true)
+     * @ORM\Column(name="bsb", type="string", length=45, nullable=true)
      *
-     * @Assert\Iban(message = "cocorico_user.iban.invalid", groups={
-     *  "CocoricoProfilePayment"
-     * }))
-     *
-     * @Assert\NotBlank(message="cocorico_user.iban.blank", groups={
+     * @Assert\NotBlank(message="cocorico_user.bsb.blank", groups={
      *  "CocoricoProfilePayment"
      * })
      *
      */
-    protected $iban;
+    protected $bsb;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="bic", type="string", length=25, nullable=true)
+     * @ORM\Column(name="account", type="string", length=25, nullable=true)
      *
-     * @Assert\NotBlank(message="cocorico_user.bic.blank", groups={
+     * @Assert\NotBlank(message="cocorico_user.account.blank", groups={
      *  "CocoricoProfilePayment"
      * })
      */
-    protected $bic;
+    protected $account;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="bank_owner_name", type="string", length=100, nullable=true)
+     * @ORM\Column(name="bank_account_name", type="string", length=100, nullable=true)
      *
-     * @Assert\NotBlank(message="cocorico_user.bank_owner_name.blank", groups={
+     * @Assert\NotBlank(message="cocorico_user.bank_account_name.blank", groups={
      *  "CocoricoProfilePayment"
      * })
      */
-    protected $bankOwnerName;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="bank_owner_address", type="string", length=255, nullable=true)
-     *
-     * @Assert\NotBlank(message="cocorico_user.bank_owner_address.blank", groups={
-     *  "CocoricoProfilePayment"
-     * })
-     */
-    protected $bankOwnerAddress;
-
-    /**
-     * @ORM\Column(name="annual_income", type="decimal", precision=10, scale=2, nullable=true)
-     *
-     * @var integer
-     */
-    protected $annualIncome;
+    protected $bankAccountName;
 
     /**
      * @Assert\Length(
@@ -706,81 +673,49 @@ class User extends BaseUser implements ParticipantInterface
     /**
      * @return string
      */
-    public function getIban()
+    public function getBsb()
     {
-        return $this->iban;
+        return $this->bsb;
     }
 
     /**
-     * @param string $iban
+     * @param string $bsb
      */
-    public function setIban($iban)
+    public function setBsb($bsb)
     {
-        $this->iban = $iban;
-    }
-
-    /**
-     * @return string
-     */
-    public function getBic()
-    {
-        return $this->bic;
-    }
-
-    /**
-     * @param string $bic
-     */
-    public function setBic($bic)
-    {
-        $this->bic = $bic;
+        $this->bsb = $bsb;
     }
 
     /**
      * @return string
      */
-    public function getBankOwnerName()
+    public function getAccount()
     {
-        return $this->bankOwnerName;
+        return $this->account;
     }
 
     /**
-     * @param string $bankOwnerName
+     * @param string $account
      */
-    public function setBankOwnerName($bankOwnerName)
+    public function setAccount($account)
     {
-        $this->bankOwnerName = $bankOwnerName;
+        $this->account = $account;
     }
 
     /**
      * @return string
      */
-    public function getBankOwnerAddress()
+    public function getBankAccountName()
     {
-        return $this->bankOwnerAddress;
+        return $this->bankAccountName;
     }
 
     /**
-     * @param string $bankOwnerAddress
+     * @param string $bankAccountName
      */
-    public function setBankOwnerAddress($bankOwnerAddress)
+    public function setBankAccountName($bankAccountName)
     {
-        $this->bankOwnerAddress = $bankOwnerAddress;
-    }
-
-    /**
-     * @return int
-     */
-    public function getAnnualIncome()
-    {
-        return $this->annualIncome;
-    }
-
-    /**
-     * @param int $annualIncome
-     */
-    public function setAnnualIncome($annualIncome)
-    {
-        $this->annualIncome = $annualIncome;
+        $this->bankAccountName = $bankAccountName;
     }
 
     /**
@@ -814,24 +749,6 @@ class User extends BaseUser implements ParticipantInterface
     {
         $this->phonePrefix = $phonePrefix;
     }
-
-
-    /**
-     * @return string
-     */
-    public function getCountryOfResidence()
-    {
-        return $this->countryOfResidence;
-    }
-
-    /**
-     * @param string $countryOfResidence
-     */
-    public function setCountryOfResidence($countryOfResidence)
-    {
-        $this->countryOfResidence = $countryOfResidence;
-    }
-
 
     /**
      * Set averageAskerRating

@@ -108,6 +108,32 @@
                                 </ul>
 
                             </div>
+                            
+                            <div class="field-row">
+                                {{ form_errors(form.nationality) }}
+                                <span class="label">{{ form_label(form.nationality) }}</span>
+
+                                <div class="field-holder">
+                                    {{ form_widget(form.nationality,{
+                                        'attr': {
+                                            'class': "no-arrow"
+                                        }
+                                    } ) }}
+                                </div>
+                            </div>
+
+                            <div class="field-row">
+                                {{ form_errors(form.profession) }}
+                                <span class="label">{{ form_label(form.profession) }}</span>
+
+                                <div class="field-holder">
+                                    {{ form_widget(form.profession,{
+                                        'attr': {
+                                            'class': "form-control"
+                                        }
+                                    } ) }}
+                                </div>
+                            </div>
 
                             <div class="message-area">
                                 <h3>{{ 'profile.moreinfo.title'|trans }}</h3>

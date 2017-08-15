@@ -47,70 +47,27 @@ class ProfilePaymentFormType extends AbstractType
                 )
             )
             ->add(
-                'nationality',
-                'country',
-                array(
-                    'label' => 'form.user.nationality',
-                    'required' => false,
-                    'preferred_choices' => array("GB", "FR", "ES", "DE", "IT", "CH", "US", "RU"),
-                )
-            )
-            ->add(
-                'countryOfResidence',
-                'country',
-                array(
-                    'label' => 'form.user.countryOfResidence',
-                    'required' => true,
-                    'preferred_choices' => array("GB", "FR", "ES", "DE", "IT", "CH", "US", "RU"),
-                )
-            )
-            ->add(
-                'profession',
-                'text',
-                array(
-                    'label' => 'form.user.profession',
-                    'required' => false
-                )
-            )
-            ->add(
-                'annualIncome',
-                'price',
-                array(
-                    'label' => 'form.user.annual_income',
-                    'translation_domain' => 'cocorico_user',
-                    'required' => false
-                )
-            )
-            ->add(
-                'bankOwnerName',
+                'bankAccountName',
                 null,
                 array(
-                    'label' => 'form.user.bank_owner_name',
+                    'label' => 'form.user.bank_account_name',
                     'required' => true,
 //                    'disabled' => $bankEditionDisabled
                 )
             )
             ->add(
-                'bankOwnerAddress',
-                'textarea',
-                array(
-                    'label' => 'form.user.bank_owner_address',
-                    'required' => true,
-                )
-            )
-            ->add(
-                'iban',
+                'bsb',
                 'text',
                 array(
-                    'label' => 'IBAN',
+                    'label' => 'form.user.bsb',
                     'required' => true
                 )
             )
             ->add(
-                'bic',
+                'account',
                 'text',
                 array(
-                    'label' => 'BIC',
+                    'label' => 'form.user.account',
                     'required' => true
                 )
             );

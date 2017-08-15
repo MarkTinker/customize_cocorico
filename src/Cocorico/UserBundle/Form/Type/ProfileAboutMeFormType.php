@@ -107,6 +107,24 @@ class ProfileAboutMeFormType extends AbstractType implements TranslationContaine
                     'required' => false
                 )
             )
+
+            ->add(
+                'nationality',
+                'country',
+                array(
+                    'label' => 'form.user.nationality',
+                    'required' => false,
+                    'preferred_choices' => array("GB", "FR", "ES", "DE", "IT", "CH", "US", "RU"),
+                )
+            )
+            ->add(
+                'profession',
+                'text',
+                array(
+                    'label' => 'form.user.profession',
+                    'required' => false
+                )
+            )
             ->add(
                 'languages',
                 'collection',

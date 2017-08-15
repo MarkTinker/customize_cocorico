@@ -107,16 +107,31 @@
 
                         <div class="column">
                             {% for address in form.addresses %}
-                                <h4>{{ 'form.contact.billingaddress.title'|trans }}</h4>
+                                <h4>{{ 'form.contact.deliveryaddress.title'|trans }}</h4>
 
                                 <div class="field-row alt">
-                                    {{ form_errors(address.address) }}
+                                    {{ form_errors(address.address1) }}
                                     <span class="label">
-                                        {{ form_label(address.address) }}
+                                        {{ form_label(address.address1) }}
                                     </span>
 
                                     <div class="field-holder">
-                                        {{ form_widget(address.address, {
+                                        {{ form_widget(address.address1, {
+                                            'attr': {
+                                                'class': "form-control"
+                                            }
+                                        }) }}
+                                    </div>
+                                </div>
+
+                                <div class="field-row alt">
+                                    {{ form_errors(address.address2) }}
+                                    <span class="label">
+                                        {{ form_label(address.address2) }}
+                                    </span>
+
+                                    <div class="field-holder">
+                                        {{ form_widget(address.address2, {
                                             'attr': {
                                                 'class': "form-control"
                                             }
