@@ -14,6 +14,7 @@ namespace Cocorico\UserBundle\Form\Type;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints\True;
 
 /**
  * Class RegistrationFormType
@@ -22,6 +23,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 class RegistrationFormType extends AbstractType
 {
     private $class;
+    public static $tacError = 'listing.form.tac.error';
 
     /**
      * @param string $class
@@ -64,15 +66,6 @@ class RegistrationFormType extends AbstractType
                 )
             )
             ->add(
-                'countryOfResidence',
-                'country',
-                array(
-                    'label' => 'form.user.countryOfResidence',
-                    'required' => true,
-                    'preferred_choices' => array("GB", "FR", "ES", "DE", "IT", "CH", "US", "RU"),
-                )
-            )
-            ->add(
                 'plainPassword',
                 'repeated',
                 array(
@@ -88,6 +81,19 @@ class RegistrationFormType extends AbstractType
                     ),
                     'invalid_message' => 'fos_user.password.mismatch',
                     'required' => true
+                )
+            )            
+            ->add(
+                "tac",
+                "checkbox",
+                array(
+                    'label' => 'listing.form.tac',
+                    'mapped' => false,
+                    'constraints' => new True(
+                        array(
+                            "message" => self::$tacError
+                        )
+                    ),
                 )
             );
     }

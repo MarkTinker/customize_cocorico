@@ -102,7 +102,7 @@
                                 </div>
                             </div>
                             <div class="block">
-                                <h2>{{ 'listing.new.price.title'|trans }}</h2>
+                                <h2>{{ 'listing.new.price.title'|trans }}</h2>                            
                                 <!-- price-box -->
                                 <div class="area">
                                     <div class="price-box">
@@ -129,7 +129,56 @@
                                             } only %}
                                         {% endif %}
                                     </div>
+
+                                    <div class="price-box small-box">
+                                        <strong class="title">
+                                            {{ 'listing.new.price.retail'|trans }}
+                                        </strong>
+                                        
+                                        <div class="field-row">
+                                            {{ form_errors(form.retailprice) }}
+                                            {{ form_widget(form.retailprice, {
+                                                'attr': {
+                                                    'class': 'numbers-only form-control',
+                                                    'help': 'listing.edit.retailprice.help'|trans
+                                                }
+                                            }) }}
+                                        </div>
+                                    </div>                                    
                                 </div>
+
+                                <div class="area">
+                                    <div class="row">
+                                        <h2 class="float-left">{{ 'listing.form.selloption'|trans }}</h2>
+                                        <div class="float-left">
+                                            {{ form_widget(form.selloption) }}
+                                        </div>                                        
+                                    </div> 
+
+                                    <div id="sell-price-box" class="price-box small-box">
+                                        <strong class="title">
+                                            {{ 'listing.form.sellprice'|trans }}
+                                        </strong>
+
+                                        <div class="field-row">
+                                            {{ form_errors(form.sellprice) }}
+                                            {{ form_widget(form.sellprice, {
+                                                'attr':{
+                                                    'class': 'numbers-only form-control',
+                                                    'help': 'listing.edit.sellprice.help'|trans
+                                                }
+                                            }) }}                                            
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="area">
+                                    <h2>{{ 'listing.form.salenotes'|trans }}</h2>
+                                    {{ form_widget(form.salenotes) }}
+                                </div>
+
+
+
                                 <!-- alert -->
                                 <div role="alert" class="alert alert-warning">
                                     <i class="ico exclamation">!</i>
@@ -204,6 +253,24 @@
             //Disable submit button on click
             $("[type=submit]").click(function (e) {
                 $(this).prop('disabled', true);
+            });
+        });
+
+        $(document).ready(function() {
+            if($(this).is(":checked")) {
+                $('#sell-price-box').show();
+                return;
+            }
+            else {
+                $('#sell-price-box').hide();
+            }
+
+            $('#listing_selloption').change(function() {
+                if($(this).is(":checked")) {
+                    $('#sell-price-box').show();
+                    return;
+                }
+                $('#sell-price-box').hide();
             });
         });
     </script>

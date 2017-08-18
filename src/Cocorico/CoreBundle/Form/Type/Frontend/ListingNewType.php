@@ -144,6 +144,34 @@ class ListingNewType extends AbstractType implements TranslationContainerInterfa
                 )
             )
             ->add(
+                'retailprice',
+                'price',
+                array(
+                    'label' => 'listing.form.retailprice',
+                )
+            )
+            ->add(
+                'selloption',
+                'checkbox',
+                array(
+                    'label' => 'listing.form.selloption',
+                )
+            )
+            ->add(
+                'sellprice',
+                'price',
+                array(
+                    'label' => 'listing.form.sellprice',
+                )
+            )
+            ->add(
+                'salenotes',
+                'textarea',
+                array(
+                    'label' => 'listing.form.salenotes'
+                )
+            )
+            ->add(
                 'image',
                 new ImageType()
             );
@@ -179,6 +207,7 @@ class ListingNewType extends AbstractType implements TranslationContainerInterfa
                 )
             );
             */
+            /*
         $builder
             ->add(
                 "tac",
@@ -193,7 +222,7 @@ class ListingNewType extends AbstractType implements TranslationContainerInterfa
                     ),
                 )
             );
-
+        */
         /**
          * Set the user fields according to his logging status
          *

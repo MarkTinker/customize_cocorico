@@ -8142,6 +8142,10 @@ label {
     height: auto;
 }
 
+.price-box.small-box {    
+    width: 250px !important;
+}
+
 /* price-box */
 .price-box {
     display: inline-block;

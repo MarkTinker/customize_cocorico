@@ -100,6 +100,35 @@ abstract class BaseListing
     protected $price;
 
     /**
+     * @ORM\Column(name="retailprice", type="decimal", precision=8, scale=0, nullable=false)
+     * @Assert\NotBlank(message="assert.not_blank")
+     *
+     * @var integer
+     */
+    protected $retailprice;
+
+    /**
+    * @ORM\Column(name="selloption", type="boolean", nullable=true)
+    *
+    * @var boolean
+    */
+    protected $selloption;
+
+    /**
+     * @ORM\Column(name="sellprice", type="decimal", precision=8, scale=0, nullable=true)
+     *
+     * @var integer
+     */
+    protected $sellprice;
+
+    /**
+     * @ORM\Column(name="salenotes", type="text", nullable=true)
+     *
+     * @var string
+     */
+    protected $salenotes;
+
+    /**
      *
      * @ORM\Column(name="certified", type="boolean", nullable=true)
      *
@@ -248,6 +277,99 @@ abstract class BaseListing
     }
 
 
+    /**
+     * Set retailprice
+     *
+     * @param  integer $retailprice
+     * @return Listing
+    */
+    public function setRetailprice($retailprice)
+    {
+        $this->retailprice = $retailprice;
+
+        return $this;
+    }
+
+    /**
+    * Get retailprice
+    *
+    * @return string
+    */
+    public function getRetailprice()
+    {
+        return $this->retailprice;
+    }
+    
+    /**
+     * Set selloption
+     *
+     * @param  boolean $selloption
+     * @return Listing
+    */
+    public function setSelloption($selloption)
+    {
+        $this->selloption = $selloption;
+
+        return $this;
+    }
+
+    /**
+    * Get selloption
+    *
+    * @return boolean
+    */
+    public function getSelloption()
+    {
+        return $this->selloption;
+    }
+    
+    
+    /**
+     * Set sellprice
+     *
+     * @param  integer $sellprice
+     * @return Listing
+     */
+    public function setSellprice($sellprice)
+    {
+        $this->sellprice = $sellprice;
+
+        return $this;
+    }
+
+    /**
+    * Get sellprice
+    *
+    * @return integer
+    */
+    public function getSellprice()
+    {
+        return $this->sellprice;
+    }
+
+    /**
+     * Set salenotes
+     *
+     * @param  string $salenotes
+     * @return Listing
+    */
+    public function setSalenotes($sellprice)
+    {
+        $this->salenotes = $salenotes;
+
+        return $this;
+    }
+
+    /**
+    * Get salenotes
+    *
+    * @return string
+    */
+    public function getSalenotes()
+    {
+        return $this->salenotes;
+    }
+    
     /**
      * Set price
      *
