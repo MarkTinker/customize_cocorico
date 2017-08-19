@@ -68,7 +68,11 @@ class ListingFormHandler
         $form->handleRequest($this->request);
 
         if ($form->isSubmitted() && $this->request->isMethod('POST') && $form->isValid()) {
-            return $this->onSuccess($form);
+            var_dump($form->getClickedButton()->getName()); exit;
+            if ($form->get('publish')->isClicked())
+                return $this->onPublish($form);
+            else if ($form->get('draft')->isClicked())
+                return $this->onDraft($form);
         }
 
         return false;
@@ -78,7 +82,7 @@ class ListingFormHandler
      * @param Form $form
      * @return boolean
      */
-    private function onSuccess(Form $form)
+    private function onPublish(Form $form)
     {
         /** @var Listing $listing */
         $listing = $form->getData();
@@ -91,11 +95,32 @@ class ListingFormHandler
             $this->registrationHandler->handleRegistration($user);
         }
 
-        $this->listingManager->save($listing);
+        $this->listingManager->save($listing, true);
 
         return true;
     }
 
+    /**
+     * @param Form $form
+     * @return boolean
+     */
+     private function onDraft(Form $form)
+     {
+         /** @var Listing $listing */
+         $listing = $form->getData();
+ 
+         //Login is done in BookingNewType form
+         if ($this->request->request->get('_username') || $this->request->request->get('_password')) {
+         } //Register : Authentication and Welcome email after registration
+         elseif ($form->has('user') && $form->get('user')->has("email")) {
+             $user = $listing->getUser();
+             $this->registrationHandler->handleRegistration($user);
+         }         
+         
+         $this->listingManager->save($listing, false);
+ 
+         return true;
+     }
 
     /**
      * @param  Listing $listing

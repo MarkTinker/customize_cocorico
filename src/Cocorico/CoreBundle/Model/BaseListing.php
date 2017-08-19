@@ -33,6 +33,7 @@ abstract class BaseListing
     const STATUS_SUSPENDED = 4;
     const STATUS_DELETED = 5;
     const STATUS_TO_VALIDATE = 6;
+    const STATUS_DRAFT = 7;
 
     public static $statusValues = array(
         self::STATUS_NEW => 'entity.listing.status.new',
@@ -40,7 +41,8 @@ abstract class BaseListing
         self::STATUS_INVALIDATED => 'entity.listing.status.invalidated',
         self::STATUS_SUSPENDED => 'entity.listing.status.suspended',
         self::STATUS_DELETED => 'entity.listing.status.deleted',
-        self::STATUS_TO_VALIDATE => 'entity.listing.status.to_validate'
+        self::STATUS_TO_VALIDATE => 'entity.listing.status.to_validate',
+        self::STATUS_DRAFT => 'entity.listing.status.draft'
     );
 
     public static $visibleStatus = array(
@@ -48,7 +50,8 @@ abstract class BaseListing
         self::STATUS_PUBLISHED,
         self::STATUS_INVALIDATED,
         self::STATUS_SUSPENDED,
-        self::STATUS_TO_VALIDATE
+        self::STATUS_TO_VALIDATE,
+        self::STATUS_DRAFT
     );
 
 
@@ -92,16 +95,14 @@ abstract class BaseListing
     protected $type;
 
     /**
-     * @ORM\Column(name="price", type="decimal", precision=8, scale=0, nullable=false)
-     * @Assert\NotBlank(message="assert.not_blank")
+     * @ORM\Column(name="price", type="decimal", precision=8, scale=0, nullable=true)
      *
      * @var integer
      */
     protected $price;
 
     /**
-     * @ORM\Column(name="retailprice", type="decimal", precision=8, scale=0, nullable=false)
-     * @Assert\NotBlank(message="assert.not_blank")
+     * @ORM\Column(name="retailprice", type="decimal", precision=8, scale=0, nullable=true)
      *
      * @var integer
      */

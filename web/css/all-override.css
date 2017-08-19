@@ -1634,7 +1634,6 @@ ul.collection {
 }
 
 .btns-area .btn-primary {
-    width: 33%;
     margin: 0 auto;
 }
 
@@ -2582,4 +2581,13 @@ ul.collection {
 
 .post-content .listing-box-delivery {
     float: right;
+}
+
+
+.col-centered {
+    float:none;
+    margin: 0 auto;
+}
+.col-centered * {
+    float:none;
 }

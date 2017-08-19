@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
-  <file date="2017-08-17T14:40:03Z" source-language="en" target-language="en" datatype="plaintext" original="not.available">
+  <file date="2017-08-18T15:34:52Z" source-language="en" target-language="en" datatype="plaintext" original="not.available">
     <header>
       <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
       <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
@@ -50,12 +50,12 @@
       <trans-unit id="b5bc050f765ad972a0347e56957630ec45dec432" resname="entity.listing.cancellation_policy.flexible">
         <source>entity.listing.cancellation_policy.flexible</source>
         <target>Flexible</target>
-        <jms:reference-file line="71">CoreBundle/Model/BaseListing.php</jms:reference-file>
+        <jms:reference-file line="74">CoreBundle/Model/BaseListing.php</jms:reference-file>
       </trans-unit>
       <trans-unit id="4be62a158d72fda333ee9ad4e24aeaba6f2dcefc" resname="entity.listing.cancellation_policy.strict">
         <source>entity.listing.cancellation_policy.strict</source>
         <target>Strict</target>
-        <jms:reference-file line="72">CoreBundle/Model/BaseListing.php</jms:reference-file>
+        <jms:reference-file line="75">CoreBundle/Model/BaseListing.php</jms:reference-file>
       </trans-unit>
       <trans-unit id="da9160f098524d39a66a31d78d8f7e5e0b191d62" resname="entity.listing.cancellation_policy_desc.flexible">
         <source>entity.listing.cancellation_policy_desc.flexible</source>
@@ -63,59 +63,64 @@
 
 > If the asker cancels less than X days before the start of the booking , he is reimbursed X% of the amount paid
 ]]></target>
-        <jms:reference-file line="76">CoreBundle/Model/BaseListing.php</jms:reference-file>
+        <jms:reference-file line="79">CoreBundle/Model/BaseListing.php</jms:reference-file>
       </trans-unit>
       <trans-unit id="c19128b495e42fbc146b81d485b78c5679d7a9a3" resname="entity.listing.cancellation_policy_desc.strict">
         <source>entity.listing.cancellation_policy_desc.strict</source>
         <target><![CDATA[> If the asker cancels more than X days before the start of the booking , he is reimbursed X% of the amount paid
 
 > If the asker cancels less than X days before the start of the booking , he is reimbursed X% of the amount paid]]></target>
-        <jms:reference-file line="77">CoreBundle/Model/BaseListing.php</jms:reference-file>
+        <jms:reference-file line="80">CoreBundle/Model/BaseListing.php</jms:reference-file>
       </trans-unit>
       <trans-unit id="86141469556c626c446c319fc332725e9871e30d" resname="entity.listing.status.deleted">
         <source>entity.listing.status.deleted</source>
         <target>Deleted</target>
-        <jms:reference-file line="42">CoreBundle/Model/BaseListing.php</jms:reference-file>
+        <jms:reference-file line="43">CoreBundle/Model/BaseListing.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="7f3482805a3819f1882576ff44ba36ecb41718b6" resname="entity.listing.status.draft">
+        <source>entity.listing.status.draft</source>
+        <target state="new">entity.listing.status.draft</target>
+        <jms:reference-file line="45">CoreBundle/Model/BaseListing.php</jms:reference-file>
       </trans-unit>
       <trans-unit id="a63f8ae54b464c70007db9a046f850723fa04b9e" resname="entity.listing.status.invalidated">
         <source>entity.listing.status.invalidated</source>
         <target>Invalidated</target>
-        <jms:reference-file line="40">CoreBundle/Model/BaseListing.php</jms:reference-file>
+        <jms:reference-file line="41">CoreBundle/Model/BaseListing.php</jms:reference-file>
       </trans-unit>
       <trans-unit id="54f6991f2d26f56c9a90bfe6d0d396c1b1b8945e" resname="entity.listing.status.new">
         <source>entity.listing.status.new</source>
         <target>New</target>
-        <jms:reference-file line="38">CoreBundle/Model/BaseListing.php</jms:reference-file>
+        <jms:reference-file line="39">CoreBundle/Model/BaseListing.php</jms:reference-file>
       </trans-unit>
       <trans-unit id="9be91469d02a12824c2a7d545fcb7bcd18aadf88" resname="entity.listing.status.published">
         <source>entity.listing.status.published</source>
         <target>Published</target>
-        <jms:reference-file line="39">CoreBundle/Model/BaseListing.php</jms:reference-file>
+        <jms:reference-file line="40">CoreBundle/Model/BaseListing.php</jms:reference-file>
       </trans-unit>
       <trans-unit id="0c0f119745bec4421d5ba50c7a36be0f147c4869" resname="entity.listing.status.suspended">
         <source>entity.listing.status.suspended</source>
         <target>Suspended</target>
-        <jms:reference-file line="41">CoreBundle/Model/BaseListing.php</jms:reference-file>
+        <jms:reference-file line="42">CoreBundle/Model/BaseListing.php</jms:reference-file>
       </trans-unit>
       <trans-unit id="29cbc9c1313ebb2a4b29b8853989366999fdfe4c" resname="entity.listing.status.to_validate">
         <source>entity.listing.status.to_validate</source>
         <target>To Validate</target>
-        <jms:reference-file line="43">CoreBundle/Model/BaseListing.php</jms:reference-file>
+        <jms:reference-file line="44">CoreBundle/Model/BaseListing.php</jms:reference-file>
       </trans-unit>
       <trans-unit id="cda951a5ef0c72428fce6ac96ef0143bd03b2ab3" resname="entity.listing.type.one">
         <source>entity.listing.type.one</source>
         <target>Type one</target>
-        <jms:reference-file line="61">CoreBundle/Model/BaseListing.php</jms:reference-file>
+        <jms:reference-file line="64">CoreBundle/Model/BaseListing.php</jms:reference-file>
       </trans-unit>
       <trans-unit id="b6d2d528a891ddf2ec35867bcd9e14640e560144" resname="entity.listing.type.three">
         <source>entity.listing.type.three</source>
         <target>Type three</target>
-        <jms:reference-file line="63">CoreBundle/Model/BaseListing.php</jms:reference-file>
+        <jms:reference-file line="66">CoreBundle/Model/BaseListing.php</jms:reference-file>
       </trans-unit>
       <trans-unit id="e743c66b6bfb745b0e9cf3b276db09e283e16dca" resname="entity.listing.type.two">
         <source>entity.listing.type.two</source>
         <target>Type two</target>
-        <jms:reference-file line="62">CoreBundle/Model/BaseListing.php</jms:reference-file>
+        <jms:reference-file line="65">CoreBundle/Model/BaseListing.php</jms:reference-file>
       </trans-unit>
       <trans-unit id="f4c20a2055d3928af0f67db6a649501562b93870" resname="entity.listing_availability.status.available">
         <source>entity.listing_availability.status.available</source>
@@ -563,11 +568,6 @@
         <jms:reference-file line="33">Type/Dashboard/ListingEditAvailabilitiesStatusType.php</jms:reference-file>
         <jms:reference-file line="47">Type/Dashboard/ListingEditStatusType.php</jms:reference-file>
       </trans-unit>
-      <trans-unit id="68af81ad015bd138bbb52a137e8a782c7136b7d3" resname="listing.form.tac">
-        <source>listing.form.tac</source>
-        <target>I accept</target>
-        <jms:reference-file line="215">Type/Frontend/ListingNewType.php</jms:reference-file>
-      </trans-unit>
       <trans-unit id="b32775cc4444951b78d8abe0d68e1cb394515443" resname="listing.form.title">
         <source>listing.form.title</source>
         <target>Title</target>
@@ -633,6 +633,11 @@
         <target>Which listing types do you want to publish ?</target>
         <jms:reference-file line="9">Frontend/Listing/form_categories.html.twig</jms:reference-file>
       </trans-unit>
+      <trans-unit id="a5143cc0200aa3d4c5765f1ae3476581d08b686a" resname="listing.new.preview">
+        <source>listing.new.preview</source>
+        <target state="new">Preview</target>
+        <jms:reference-file line="215">Frontend/Listing/new.html.twig</jms:reference-file>
+      </trans-unit>
       <trans-unit id="10c64b246aa5847e69aa2e4d0b57c39bb7bad697" resname="listing.new.price.rent">
         <source>listing.new.price.rent</source>
         <target>Rent price</target>
@@ -661,7 +666,12 @@
       <trans-unit id="f9b32384b68743661c0683cfa182d4db14a5eabc" resname="listing.new.save">
         <source>listing.new.save</source>
         <target>Publish your listing</target>
-        <jms:reference-file line="225">Frontend/Listing/new.html.twig</jms:reference-file>
+        <jms:reference-file line="214">Frontend/Listing/new.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="dd6cd9333af3638b87b785fff1317b005ca5b003" resname="listing.new.save.exit">
+        <source>listing.new.save.exit</source>
+        <target state="new">Save and Exit</target>
+        <jms:reference-file line="216">Frontend/Listing/new.html.twig</jms:reference-file>
       </trans-unit>
       <trans-unit id="a81c08ca39057623265fcf541e0aab54c70ec3de" resname="listing.new.signup.title">
         <source>listing.new.signup.title</source>
@@ -674,11 +684,6 @@
         <source>listing.new.success</source>
         <target>You have created a new listing successfully</target>
         <jms:reference-file line="55">Controller/Frontend/ListingController.php</jms:reference-file>
-      </trans-unit>
-      <trans-unit id="91f0ae365b42ca15297e24469531596860d6e62c" resname="listing.new.tac.link">
-        <source>listing.new.tac.link</source>
-        <target>the terms of use</target>
-        <jms:reference-file line="214">Frontend/Listing/new.html.twig</jms:reference-file>
       </trans-unit>
       <trans-unit id="099bd9fd3eb8ecdfa47a2bf51cd486c5094cfae0" resname="listing.new.title">
         <source>listing.new.title</source>
@@ -1145,11 +1150,6 @@
         <target><![CDATA[Price & conditions]]></target>
         <jms:reference-file line="25">Dashboard/Listing/_nav_side.html.twig</jms:reference-file>
         <jms:reference-file line="26">Dashboard/Listing/_nav_side.html.twig</jms:reference-file>
-      </trans-unit>
-      <trans-unit id="c7a4298347ed905bf82c406276876396d2b49a12" resname="nav.tac.slug">
-        <source>nav.tac.slug</source>
-        <target>terms-of-use</target>
-        <jms:reference-file line="212">Frontend/Listing/new.html.twig</jms:reference-file>
       </trans-unit>
       <trans-unit id="fd1286353570c5703799ba76999323b7c7447b06" resname="no">
         <source>no</source>

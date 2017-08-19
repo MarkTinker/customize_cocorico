@@ -61,19 +61,36 @@ class ListingManager extends BaseManager
 
     /**
      * @param  Listing $listing
+     * @param  boolean $status 0: draft 1: publish
      * @return Listing
      */
-    public function save(Listing $listing)
+    public function save(Listing $listing, $status)
     {
         $listingPublished = false;
-        //Published by default
+        //Published by default        
         if (!$listing->getId()) {
-            if ($this->newListingIsPublished) {
-                $listing->setStatus(Listing::STATUS_PUBLISHED);
-                $listingPublished = true;
-            } else {
-                $listing->setStatus(Listing::STATUS_TO_VALIDATE);
+
+            // If published
+            if($status == true)
+            {
+                if ($this->newListingIsPublished) {
+                    $listing->setStatus(Listing::STATUS_PUBLISHED);
+                    $listingPublished = true;
+                } else {
+                    $listing->setStatus(Listing::STATUS_TO_VALIDATE);
+                }
             }
+            else
+            {
+                if ($this->newListingIsPublished) {
+                    $listing->setStatus(Listing::STATUS_DRAFT);
+                    $listingPublished = false;
+                } else {
+                    $listing->setStatus(Listing::STATUS_TO_VALIDATE);
+                }
+            }
+
+            
         } else {
             //todo: replace this tracking change by doctrine event listener. (See copost UserEntityListener)
             $uow = $this->em->getUnitOfWork();

@@ -120,6 +120,20 @@
                     }) }}
                 </div>
             </div>
+
+            {{ form_errors(form_registration.tac) }}
+            <div class="agreement">
+                {{ form_widget(form_registration.tac) }}
+                <span class="label">
+                    {{ form_label(form_registration.tac, null, {'required': false} ) }}
+                    <a href="{{ path('cocorico_page_show', { 'slug': 'nav.tac.slug'|trans }) }}"
+                       target="_blank">
+                        {{ 'form.new.tac.link'|trans }}
+                    </a>*
+                </span>
+            </div>
+
+
         </div>
 
         <div class="column">

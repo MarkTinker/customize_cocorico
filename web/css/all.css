@@ -7811,13 +7811,22 @@ span.btn:focus {
     max-width: 270px;
 }
 
-.btns-area .btn-primary {
+.btns-area .btn-primary{
     padding: 0 5px;
-    display: block;
-    width: 100%;
+    margin-left: 3px;
+    margin-right: 3px;
+    height: 36px;    
+    text-transform: none;
+}
+
+.btns-area .btn-default  {
+    padding: 0 5px;
+    margin-left: 3px;
+    margin-right: 3px;
     height: 36px;
     text-transform: none;
 }
+
 
 .agreement {
     margin: 0 0 20px;
@@ -17574,4 +17583,8 @@ body.loading {
 
 .loading .loader {
     display: block;
+}
+
+.agreement .label {
+    float: none;
 }

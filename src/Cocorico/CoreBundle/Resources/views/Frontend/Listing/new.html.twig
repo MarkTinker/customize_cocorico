@@ -204,25 +204,15 @@
                     </div>
                 {% endif %}
                 <div class="btns-area new-listing">
-                    {{ form_errors(form.tac) }}
-                    <div class="agreement">
-                        {{ form_widget(form.tac) }}
-                        <span class="label">
-                            {{ form_label(form.tac, null, {'required': false} ) }}
-                            <a href="{{ path('cocorico_page_show', { 'slug': 'nav.tac.slug'|trans }) }}"
-                               target="_blank">
-                                {{ 'listing.new.tac.link'|trans }}
-                            </a>*
-                        </span>
-                    </div>
 
                     <div id="progress" class="progress">
                         <div class="progress-bar progress-bar-success"></div>
                     </div>
 
-                    <div class="text-center">
-                        <input id="listing-new-save" type="submit" class="btn btn-primary"
-                               value="{{ 'listing.new.save'|trans }}">
+                    <div class="text-center row col-centered">
+                        {{ form_widget(form.publish) }}
+                        {{ form_widget(form.preview) }}
+                        {{ form_widget(form.draft) }}                        
                     </div>
 
                 </div>

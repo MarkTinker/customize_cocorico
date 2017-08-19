@@ -87,7 +87,7 @@ class RegistrationFormType extends AbstractType
                 "tac",
                 "checkbox",
                 array(
-                    'label' => 'listing.form.tac',
+                    'label' => 'form.tac',
                     'mapped' => false,
                     'constraints' => new True(
                         array(

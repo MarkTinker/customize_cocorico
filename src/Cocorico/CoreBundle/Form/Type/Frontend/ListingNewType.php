@@ -174,6 +174,30 @@ class ListingNewType extends AbstractType implements TranslationContainerInterfa
             ->add(
                 'image',
                 new ImageType()
+            )
+            ->add(
+                'publish',
+                'submit',
+                array(
+                    'label' => 'listing.new.save',
+                    'attr' => array('class' => 'btn btn-primary col-md-5')
+                )
+            )
+            ->add(
+                'preview',
+                'button',
+                array(
+                    'label'=>'listing.new.preview',
+                    'attr' => array('class' => 'btn btn-default col-md-3')
+                )
+            )
+            ->add(
+                'draft',
+                'submit',
+                array(
+                    'label'=>'listing.new.save.exit',
+                    'attr'=>array('class' => 'btn btn-default col-md-3')
+                )
             );
         
         /*
