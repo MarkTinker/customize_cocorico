@@ -208,7 +208,7 @@
                     <div id="progress" class="progress">
                         <div class="progress-bar progress-bar-success"></div>
                     </div>
-
+                    {{ form_widget(form.action) }}
                     <div class="text-center row col-centered">
                         {{ form_widget(form.publish) }}
                         {{ form_widget(form.preview) }}
@@ -243,6 +243,14 @@
             //Disable submit button on click
             $("[type=submit]").click(function (e) {
                 $(this).prop('disabled', true);
+            });
+
+            $('#listing_publish').click(function(e) {
+                $('#listing_action').val('publish');
+            });
+
+            $('#listing_draft').click(function(e) {
+                $('#listing_action').val('draft');
             });
         });
 

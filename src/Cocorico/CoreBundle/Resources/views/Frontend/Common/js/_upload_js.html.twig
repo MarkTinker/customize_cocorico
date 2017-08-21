@@ -78,11 +78,13 @@ filter="?jsqueeze" output='js/compiled/upload.js' %}
                             //Submit form if all images are uploaded
                             if (nbFilesUploaded == nbFilesToUpload) {
                                 $images.val(orderedUploadedFiles.toString());
+                                $(this).prop('disabled', false);
                                 $form.submit();
                             }
                         });
                     });
                 } else {
+                    $(this).prop('disabled', false);
                     $form.submit();
                 }
                 return false;

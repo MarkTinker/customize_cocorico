@@ -67,11 +67,10 @@ class ListingFormHandler
     {
         $form->handleRequest($this->request);
 
-        if ($form->isSubmitted() && $this->request->isMethod('POST') && $form->isValid()) {
-            var_dump($form->getClickedButton()->getName()); exit;
-            if ($form->get('publish')->isClicked())
+        if ($form->isSubmitted() && $this->request->isMethod('POST') && $form->isValid()) {           
+            if ($form->get('action')->getData() == "publish")
                 return $this->onPublish($form);
-            else if ($form->get('draft')->isClicked())
+            else if ($form->get('action')->getData() == "draft")
                 return $this->onDraft($form);
         }
 

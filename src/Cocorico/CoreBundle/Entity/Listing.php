@@ -116,7 +116,6 @@ class Listing extends BaseListing
      */
     private $options;
 
-
     public function __construct()
     {
         $this->images = new ArrayCollection();
@@ -271,7 +270,6 @@ class Listing extends BaseListing
     {
         return $this->listingListingCategories;
     }
-
 
     /**
      * Set user

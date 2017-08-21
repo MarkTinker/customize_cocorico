@@ -138,6 +138,18 @@ class ProfileAboutMeFormType extends AbstractType implements TranslationContaine
                 )
             )
             ->add(
+                'links',
+                'collection',
+                array(
+                    'allow_delete' => true,
+                    'allow_add' => true,
+                    'by_reference' => false,
+                    'type' => new UserLinksType(),
+                    /** @Ignore */
+                    'label' => false
+                )
+            )
+            ->add(
                 'motherTongue',
                 'language',
                 array(

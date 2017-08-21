@@ -184,6 +184,14 @@ class ListingNewType extends AbstractType implements TranslationContainerInterfa
                 )
             )
             ->add(
+                'action',
+                'hidden',
+                array(
+                    'mapped' => false,
+                    'data' => ''
+                )
+            )
+            ->add(
                 'preview',
                 'button',
                 array(

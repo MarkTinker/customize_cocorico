@@ -185,6 +185,28 @@
                                         </a>
                                     </div>
                                 </div>
+
+                                <div class="area">
+                                    <h2>{{'social.link.and.blog'|trans}}</h2>
+                                    <ul>
+                                        {% if form.links %}
+                                        {% for link in form.links %}
+                                                <li>
+                                                    <a href="#" class="close" data-dismiss="alert" aria-label="Close">
+                                                        <i class="icon-cancel"></i>
+                                                        <span class="hidden">close</span>
+                                                    </a>
+                                                    <a href="#" class="btn btn-default">
+                                                        {{ link.code.vars.value}}
+                                                    </a>
+                                                    {{ form_row(link) }}
+                                                </li>
+                                            {% endfor %}
+                                        {% else %}
+                                            {{ form_row(link) }}
+                                        {% endif %}
+                                    </ul>
+                                </div>
                             </div>
                         </div>
 
